@@ -1,0 +1,32 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true, // Enforce strict type-checking
+    "module": "Node16", // Use Node16 module system, which should work with Convex and React Native
+    "moduleResolution": "Node16", // Resolves modules similarly to Node.js
+    "allowImportingTsExtensions": true, // Allows importing TypeScript files with .ts extensions
+    "baseUrl": ".", // Base directory for resolving non-relative module names
+    "paths": {
+      "@/*": ["./*"] // Path alias for easier imports (useful for large projects)
+    },
+    "allowJs": true, // Allows JavaScript files to be included in the build
+    "noEmit": true, // Disables emitting output (useful if using TypeScript for type checking only)
+    "skipLibCheck": true, // Skip type checking of declaration files for faster builds
+    "resolveJsonModule": true, // Allows importing JSON files as modules
+    "esModuleInterop": true, // Enable ES Module interop for better compatibility
+    "jsx": "react-native", // Necessary for Expo and React Native projects
+    "isolatedModules": true, // Ensures that each file is treated as an isolated module
+    "target": "esnext", // Ensures compatibility with modern JavaScript features
+    "noUnusedLocals": true, // Helps with unused variables in your code (optional)
+    "noUnusedParameters": true // Helps with unused parameters in your functions (optional)
+  },
+  "include": [
+    "**/*.ts", // Include TypeScript files
+    "**/*.tsx", // Include TypeScript React files
+    ".expo/types/**/*.ts", // Include Expo type declarations
+    "expo-env.d.ts" // Include Expo environment types
+  ],
+  "exclude": [
+    "node_modules" // Exclude the node_modules folder to prevent unnecessary compilation
+  ]
+}
